@@ -146,7 +146,7 @@ class GDWebViewNavigationToolbar: UIView {
         }
         
         let items = [_backButtonItem, _forwardButtonItem, _flexibleSpace, _stopButtonItem]
-        _toolbar.setItems(items, animated: true)
+        _toolbar?.setItems(items, animated: true)
     }
     
     func loadDidFinish() {
@@ -155,7 +155,7 @@ class GDWebViewNavigationToolbar: UIView {
         }
         
         let items = [_backButtonItem, _forwardButtonItem, _flexibleSpace, _refreshButtonItem]
-        _toolbar.setItems(items, animated: true)
+        _toolbar?.setItems(items, animated: true)
     }
     
     // MARK: Navigation Methods
