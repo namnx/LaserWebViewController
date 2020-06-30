@@ -17,7 +17,9 @@ Pod::Spec.new do |s|
   s.author            = { "Patrick Laser" => "patrick.negretto@laser-group.com" }
   s.social_media_url  = "http://twitter.com/"
 
-  s.platform          = :ios, "8.0"
+  s.platform          = :ios
+  s.ios.deployment_target   = '11.0'
+  s.swift_version           = '5.0'
   s.source            = { :git => "https://github.com/LaserSrl/LaserWebViewController.git", :tag => s.version }
 
   s.source_files      = "GDWebViewController/*"
