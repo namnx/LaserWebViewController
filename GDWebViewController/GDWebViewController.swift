@@ -397,7 +397,9 @@ open class GDWebViewController: UIViewController, WKNavigationDelegate, WKUIDele
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonTapped))
+        self.navigationItem.rightBarButtonItem = doneButton
+
         // Set up toolbarContainer
         self.view.addSubview(toolbarContainer)
         self.view.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|-0-[toolbarContainer]-0-|", options: [], metrics: nil, views: ["toolbarContainer": toolbarContainer]))
@@ -469,5 +471,9 @@ open class GDWebViewController: UIViewController, WKNavigationDelegate, WKUIDele
         
         toolbarContainer = GDWebViewNavigationToolbar(delegate: self)
         toolbarContainer.translatesAutoresizingMaskIntoConstraints = false
+    }
+
+    @objc func doneButtonTapped() {
+        self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
 }
