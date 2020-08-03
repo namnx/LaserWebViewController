@@ -31,34 +31,34 @@ fileprivate let barButtonSystemItem = UIBarButtonSystemItem.self
     func webViewNavigationToolbarStop(_ toolbar: GDWebViewNavigationToolbar)
 }
 
-class GDWebViewNavigationToolbar: UIView {
+open class GDWebViewNavigationToolbar: UIView {
     
     // MARK: Public Properties
     
-    var toolbar: UIToolbar! {
+    open var toolbar: UIToolbar! {
         get {
             return _toolbar
         }
     }
     weak var delegate: GDWebViewNavigationToolbarDelegate?
-    var backButtonItem: UIBarButtonItem? {
+    open var backButtonItem: UIBarButtonItem? {
         get {
             return _backButtonItem
         }
     }
-    var forwardButtonItem: UIBarButtonItem? {
+    open var forwardButtonItem: UIBarButtonItem? {
         get {
             return _forwardButtonItem
         }
     }
-    var refreshButtonItem: UIBarButtonItem? {
+    open var refreshButtonItem: UIBarButtonItem? {
         get {
             return _refreshButtonItem
         }
     }
     
     /** The tint color to apply to the toolbar button items.*/
-    var toolbarTintColor: UIColor? {
+    open var toolbarTintColor: UIColor? {
         get {
             return _toolbarTintColor
         }
@@ -72,7 +72,7 @@ class GDWebViewNavigationToolbar: UIView {
     }
     
     /** The toolbar's background color.*/
-    var toolbarBackgroundColor: UIColor? {
+    open var toolbarBackgroundColor: UIColor? {
         get {
             return _toolbarBackgroundColor
         }
@@ -86,7 +86,7 @@ class GDWebViewNavigationToolbar: UIView {
     }
     
     /** A Boolean value that indicates whether the toolbar is translucent (true) or not (false).*/
-    var toolbarTranslucent: Bool {
+    open var toolbarTranslucent: Bool {
         get {
             return _toolbarTranslucent
         }
@@ -99,7 +99,7 @@ class GDWebViewNavigationToolbar: UIView {
         }
     }
     
-    var showsStopRefreshControl: Bool {
+    open var showsStopRefreshControl: Bool {
         get {
             return _showsStopRefreshControl
         }
@@ -182,7 +182,7 @@ class GDWebViewNavigationToolbar: UIView {
         self.delegate = delegate
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -190,7 +190,7 @@ class GDWebViewNavigationToolbar: UIView {
         super.init(frame: frame)
     }
     
-    override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         
         if (_toolbar == nil) {

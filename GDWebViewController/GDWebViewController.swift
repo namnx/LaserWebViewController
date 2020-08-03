@@ -76,7 +76,7 @@ open class GDWebViewController: UIViewController, WKNavigationDelegate, WKUIDele
     }
     
     /** The navigation toolbar object (read-only). */
-    var toolbar: GDWebViewNavigationToolbar {
+    open var toolbar: GDWebViewNavigationToolbar {
         get {
             return toolbarContainer
         }
